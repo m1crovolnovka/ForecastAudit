@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020617" />
+    <title>Агрометео — метеослужба и наши датчики</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner topbar__inner--wide">
+        <i data-lucide="cloud-sun" class="icon" aria-hidden="true"></i>
+        <span class="topbar__title">ForecastAudit</span>
+        <nav class="nav" aria-label="Разделы">
+          <a class="nav__link nav__link--active" href="/" aria-current="page">Метеопост хозяйства</a>
+          <a class="nav__link" href="/audit.html">Аудит прогнозов</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <h1 class="page__title">Метеопост хозяйства</h1>
+      <p class="page__lead">
+        Сверяем прогноз метеослужбы с показаниями полевой станции, следим за
+        расхождением и получаем рекомендации по пшенице на текущие условия.
+      </p>
+
+      <form class="search" id="search" novalidate>
+        <label class="search__label" for="site">Площадка</label>
+        <div class="search__row">
+          <div class="search__field">
+            <i data-lucide="search" class="icon" aria-hidden="true"></i>
+            <input
+              class="search__input"
+              id="site"
+              type="text"
+              placeholder="Минск, Слуцк, Лида…"
+              autocomplete="address-level2"
+            />
+          </div>
+          <button class="search__submit" id="submit" type="submit">Сравнить</button>
+        </div>
+        <p class="search__error hidden" id="error" role="alert"></p>
+      </form>
+
+      <div id="report"></div>
+
+      <p class="page__note">
+        Показания полевой станции пока смоделированы: реальные датчики не подключены.
+      </p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
